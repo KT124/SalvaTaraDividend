@@ -110,12 +110,12 @@ contract SalvaCoin is IFundsDistributionToken, DividendToken {
         // }
     }
 
-    function _beforeTokenTransfer(
+    function _afterTokenTransfer(
         address from,
         address to,
         uint256 amount
     ) internal override {
-        super._beforeTokenTransfer(from, to, amount);
+        super._afterTokenTransfer(from, to, amount);
 
         address _fundsToken = address(getFundsToken());
 
